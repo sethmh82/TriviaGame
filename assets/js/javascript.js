@@ -59,7 +59,7 @@ function loadQuestions() {
 }
 
 function wait() {
-	if (questionNumber < 7) {
+	if (questionNumber < 8) {
 	questionNumber++;
 	loadQuestions();
 	counter = 30;
@@ -105,10 +105,10 @@ var numberWrong = 0;
 var gameStart;
 var gameText;
 var counter = 30;
-var qArray = ["What year was the first iPod released?", "What band endorsed this special edition iPod?<br><img class='center-block img-right' src='../img/applelogo.jpg'>", "What is the main difference between these two iPods<br><img class='center-block img-right' src='assets/img/ipod1and2.jpg'>", "What is this iPod called?", "How many iPods have been sold to date?", "What is this iPod called?", "How many gigabytes does the latest iPod hold?", "What was special about the 5th generation iPod"];
-var aArray = [["1998", "2001", "2004", "1996"], ["Green Day","John Mayer","U2","Coldplay"], ["One has a touch wheel and the other a click wheel.", "One plays mp3 files and the other only plays wav", "They were prototypes but never released", "One has a color screen"], ["Kyoto","Hiroshima","Tokyo","Osaka"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"]];
-var iArray = ["<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>", "<img class='center-block img-right' src='../img/applelogo.jpg'>"];
-var correctA = ["B. 2001", "C. U2", "C. Taipei", "C. Tokyo", "D. Beijing", "A. Ankara", "B. Bogota", "D. New Delhi"];
+var qArray = ["What year was the first iPod released?", "What band endorsed this special edition iPod?<br><img class='center-block img-right' src='assets/img/applelogo.jpg'>", "What is the main difference between these two iPods<br><img class='center-block img-right' src='assets/img/ipod1and2.jpg'>", "What is this iPod called?", "How many iPods have been sold to date?", "What is this iPod called?", "How many gigabytes does the latest iPod hold?", "What was special about the 5th generation iPod", "What was the retail price of the very first iPod?"];
+var aArray = [["1998", "2001", "2004", "1996"], ["Green Day","John Mayer","U2","Coldplay"], ["The 1st Generation has a click wheel and the 2nd a touch wheel", "The 2nd Generation plays mp3 files and the 1st only plays wav", "They were both prototypes but never released", "The 2nd Generation has a color screen"], ["iPod Nano","iPod C","iPod Dash","iPod Mini"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"], ["$199", "$250", "$399", "$499"]];
+var iArray = ["<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>"];
+var correctA = ["B. 2001", "C. U2", "A. The 1st Generation has a click wheel and the 2nd a touch wheel", "D. iPod Mini", "D. ", "A. ", "B. ", "D. ", "C. $399"];
 var selecterAnswer;
 var timeClock;
 var numberUnanswered = 0;

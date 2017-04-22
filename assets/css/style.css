@@ -1,11 +1,25 @@
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
 body {
   background-color: white;
   color: black;
+  font-family: 'VT323', monospace;
+  background-image: url("../img/bg.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+img {
+    margin:20px;
+  
 }
 
 .btn-primary {
-    color: #9f9fa0;
-    background-color: #eaecef;
+    color: #FFF;
+    font-size: 32px !important;
+    background-color: #22ca1e;
     border-color: #c0c1c4;
 }
 
@@ -21,11 +35,29 @@ body {
     border-color: #c0c1c4;
 }
 
+.row {
+
+}
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 .jumbotron {
   box-sizing: border-box;
   height: 650px;
   background-color: rgba(0, 0, 0, 0);
 }
+
+.jumbotron p {
+  font-size: 28px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 7px;
+  border-radius: 6px;
+}
+
 
 .img-wrong {
   margin-top: 40px;
@@ -55,14 +87,29 @@ body {
 }
 
 .answer:hover {
-  background: pink;
+  background: gray;
+  vertical-align: middle;
 }
 
 .answer {
-  padding-top: 7px;
-  height: 45px;
+  padding: 7px;
+  padding-top: 10px;
+  height: 40px;
   color: black;
-  padding-left: 14px;
+  vertical-align: middle;
   background-color: white;
+  letter-spacing: 0px;
+  font-weight: 300 !important;
+  font-size: 24px !important;
+  background-image: url("../img/buttonbg.jpg");
+
+  background-repeat: repeat;
+
   border-radius: 4px;
+}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus,
+.open > .dropdown-toggle.btn-primary:focus, .btn-primary:active.focus, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {
+  color: #fff;
+  background-color: #1ba619;
+  border-color: #122b40;
 }

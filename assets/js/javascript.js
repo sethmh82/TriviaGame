@@ -1,9 +1,10 @@
 $(document).ready(function() {
 function loadGame() {
-	gameStart = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>Start Quiz</a></p>";
+	gameStart = "<p class='text-center main-button-container'><a class='btn btn-primary btn-lg btn-block start-button' href='#' role='button'>START</a></p>";
 	$(".gameArea").html(gameStart);
 }
 loadGame();
+musicSound.play();
 
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();
@@ -34,21 +35,23 @@ $("body").on("click", ".reset-button", function(event){
 
 function timeUp() {
 	numberUnanswered++;
-	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctA[questionNumber] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctA[questionNumber] + "</p>"; // + "<img class='center-block img-wrong' src='img/x.png'>"
 	$(".gameArea").html(gameText);
 	setTimeout(wait, 4000);
 }
 
 function youWin() {
+	rightSound.play();
 	numberRight++;
-	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctA[questionNumber] + "</p>" + iArray[questionNumber];
+	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'><img class='center-block img-right' src='assets/img/applelogo.jpg'> The answer is: " + correctA[questionNumber] + "</p>"; // + iArray[questionNumber]
 	$(".gameArea").html(gameText);
 	setTimeout(wait, 4000);
 }
 
 function youLose() {
+	wrongSound.play();
 	numberWrong++;
-	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctA[questionNumber] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	gameText = "<p class='text-center clock'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'><img class='center-block img-right' src='assets/img/applelogo2.jpg'> The correct answer is: "+ correctA[questionNumber] + "</p>"; // + "<img class='center-block img-wrong' src='img/x.png'>"
 	$(".gameArea").html(gameText);
 	setTimeout(wait, 4000);
 }
@@ -105,12 +108,21 @@ var numberWrong = 0;
 var gameStart;
 var gameText;
 var counter = 30;
+<<<<<<< Updated upstream
 var qArray = ["What year was the first iPod released?", "What band endorsed this special edition iPod?<br><img class='center-block img-right' src='assets/img/applelogo.jpg'>", "What is the main difference between these two iPods<br><img class='center-block img-right' src='assets/img/ipod1and2.jpg'>", "What is this iPod called?", "How many iPods have been sold to date?", "What is this iPod called?", "How many gigabytes does the latest iPod hold?", "What was special about the 5th generation iPod", "What was the retail price of the very first iPod?"];
 var aArray = [["1998", "2001", "2004", "1996"], ["Green Day","John Mayer","U2","Coldplay"], ["The 1st Generation has a click wheel and the 2nd a touch wheel", "The 2nd Generation plays mp3 files and the 1st only plays wav", "They were both prototypes but never released", "The 2nd Generation has a color screen"], ["iPod Nano","iPod C","iPod Dash","iPod Mini"], ["Hong Kong", "Macau", "Shanghai", "Beijing"], ["Ankara","Istanbul","Antalya","Bursa"], ["Medellin", "Bogota", "Cartagena", "Cali"], ["Mumbai","Hyderabad","Bangalore","New Delhi"], ["$199", "$250", "$399", "$499"]];
 var iArray = ["<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>"];
 var correctA = ["B. 2001", "C. U2", "A. The 1st Generation has a click wheel and the 2nd a touch wheel", "D. iPod Mini", "D. ", "A. ", "B. ", "D. ", "C. $399"];
+=======
+var qArray = ["What year was the first iPod released?<br><img class='center-block img-right' style='width:18%;' src='assets/img/ipod1gen.jpg'>", "What band endorsed this special edition iPod?<br><img class='center-block img-right' style='width:18%;' src='assets/img/ipodu2.jpg'>", "What is the main difference between these two iPods<br><img class='center-block img-right' style='width:26%;' src='assets/img/ipod1and2.jpg'>", "What is this iPod called?<br><img style='width:18%;' src='assets/img/ipodmini.jpg'>", "How many iPods have been sold to date (2017)?", "What is this iPod called?<br><img src='assets/img/ipodnano.jpg'>", "What is the maximum capicty of the latest (6th generation) iPod?", "What is unique about this iPod from that of all previous iPods?<br><img class='center-block img-right' src='assets/img/ipodtouch1.jpg'>", "What was the retail price of the very first iPod?"];
+var aArray = [["1998", "2001", "2004", "1996"], ["Green Day","John Mayer","U2","Coldplay"], ["The 1st Generation has a click wheel and the 2nd a touch wheel", "The 2nd Generation plays mp3 files and the 1st only plays wav", "They were both prototypes but never released", "The 2nd Generation has a color screen"], ["iPod Nano","iPod C","iPod Dash","iPod Mini"], ["115 Million","190 Million","215 Million","370 Million"], ["iPod Nano","iPod Micro","iPod Pocket","iPod Mini"], ["64 GB","128 GB","245 GB","1 TB"], ["It is the first iPod available in black and white colors","It is the first iPod that connects via USB","It is the first iPod to display pictures.","It is the first iPod with a touchscreen"], ["$199", "$250", "$399", "$499"]];
+//var iArray = ["<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>", "<img class='center-block img-right' src='assets/img/applelogo.jpg'>"];
+var correctA = ["B. 2001", "C. U2", "A. The 1st Generation has a click wheel and the 2nd a touch wheel", "D. iPod Mini", "D. 370,000,000", "A. iPod Nano", "B. 128 GB", "D. It is the first iPod with a touchscreen", "C. $399"];
+>>>>>>> Stashed changes
 var selecterAnswer;
 var timeClock;
 var numberUnanswered = 0;
 var musicSound = new Audio("assets/sound/music.mp3");
 var buttonSound = new Audio("assets/sound/button.mp3");
+var wrongSound = new Audio("assets/sound/wrong.mp3");
+var rightSound = new Audio("assets/sound/right.mp3");
